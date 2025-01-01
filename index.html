@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>憋气潜水挑战</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-area">
+            <div class="sea-creatures">
+                <div class="creature fish" data-depth="5"><img src="pic/yu.png" alt="小鱼"></div>
+                <div class="creature jellyfish" data-depth="15"><img src="pic/shuimu.png" alt="水母"></div>
+                <div class="creature shark" data-depth="25"><img src="pic/shayu.png" alt="鲨鱼"></div>
+                <div class="creature seahorse" data-depth="35"><img src="pic/haima.png" alt="海马"></div>
+                <div class="creature whale" data-depth="45"><img src="pic/jingyu.png" alt="鲸鱼"></div>
+                <div class="creature squid" data-depth="55"><img src="pic/wuzei.png" alt="乌贼"></div>
+            </div>
+            <div class="diver">
+                <img src="pic/qianshuiyuan.png" alt="潜水员">
+                <div class="stats">
+                    <div class="timer">00:00.00</div>
+                    <div class="depth">0.00米</div>
+                </div>
+            </div>
+            <div class="water-surface"></div>
+        </div>
+        <div class="controls">
+            <button id="dive-btn" disabled>下潜</button>
+            <button id="start-btn">开始憋气</button>
+            <button id="float-btn" disabled>上浮</button>
+        </div>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 500px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-area {
+    flex: 1;
+    background: linear-gradient(180deg, #0099ff 0%, #003366 100%);
+    position: relative;
+    overflow: auto;
+    height: calc(100vh - 120px);
+    transition: background 0.5s ease;
+    min-height: 400px;
+}
+
+.water-surface {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sea-creatures {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.creature {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    will-change: transform, left;
+    transition: left 3s linear;
+}
+
+.creature img {
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.fish {
+    height: calc((100vh / 7) / 3);
+}
+
+.jellyfish {
+    height: calc((100vh / 7) / 4);
+}
+
+.shark {
+    height: calc((100vh / 7) * 1.5);
+}
+
+.seahorse {
+    height: calc((100vh / 7) / 4);
+}
+
+.whale {
+    height: calc((100vh / 7) * 3);
+}
+
+.squid {
+    height: calc((100vh / 7) * 1.5);
+}
+
+.creature img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.diver {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    transition: top 0.1s ease-out;
+}
+
+.diver img {
+    height: calc(100vh / 7);
+    width: auto;
+    object-fit: contain;
+    max-height: 150px;
+    min-height: 80px;
+    transition: transform 0.5s ease;
+}
+
+.diver.floating img {
+    transform: rotate(180deg);
+}
+
+.stats {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#start-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#dive-btn, #float-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.result {
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    min-height: 40px;
+}
